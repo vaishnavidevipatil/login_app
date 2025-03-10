@@ -1,44 +1,88 @@
-.App {
-  text-align: center;
+/* === Global Styles === */
+* {
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: aliceblue; */
+  font-family: "Poppins", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar{
+  background-color: #ffcc00;
 }
 
-.App h1{
-    font-weight: 300px;
-  
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* === App Container === */
+.app-container {
+  overflow: hidden;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  text-align: center;
+  height: auto;
+  width: 150vw;
+  height: 100vh;
+  max-width: 190vw;
+  padding: 20px;
+  background-color:  rgb(131, 241, 245);
 }
 
-.App-link {
-  color: #61dafb;
+/* === Title Styling === */
+.app-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  background: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+
+/* === Responsive Typography === */
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2rem;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+/* === Button Styling === */
+
+/* Logout Button */
+button {
+  background:#007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background: #ff4757;
+  transform: scale(1.05);
 }

@@ -2,21 +2,28 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
-export default function LoginPage() {
+export default function LoginPage({ setIsLoggedIn }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+
   const handleLogin = async (e) => {
+
+    localStorage.setItem("user", "loggedIn");
+    setIsLoggedIn(true);
+    navigate("/dashboard"); // Redirect after login
+
     e.preventDefault();
     const response = await fetch("http://localhost:5000/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
+    
     const data = await response.json();
     if (data.success) {
-      navigate("/dashboard");
+      navigate("/about");
     } else {
       alert("Login Failed");
     }
@@ -53,3 +60,4 @@ export default function LoginPage() {
     </div>
   );
 }
+
