@@ -1,9 +1,10 @@
 /* General Navbar Styling */
 .navbar {
     background: green;
-    padding: 10px 20px;
+    padding: 1rem;
     margin-top: -10%;
     transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
   
   /* Navbar Brand */
@@ -70,12 +71,39 @@
     background-color: #c82333;
   }
   
+  .navbar-nav .nav-item {
+    margin: 0 0.5rem;
+  }
+  
+  .nav-link.hover-effect {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link.hover-effect::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0d6efd;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link.hover-effect:hover::after {
+    width: 100%;
+  }
+  
+  .nav-link.active::after {
+    width: 100%;
+  }
   
   /* Responsive Design */
   @media (max-width: 991px) {
     .navbar-collapse {
       background: #0056b3;
-      padding: 10px;
+      padding: 1rem 0;
       border-radius: 5px;
     }
   
@@ -83,8 +111,8 @@
       text-align: center;
     }
   
-    .navbar-nav .nav-item {
-      margin: 5px 0;
+    .nav-item {
+      margin: 0.5rem 0;
     }
   
     .d-flex {
