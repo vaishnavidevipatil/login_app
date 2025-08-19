@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Login.css";
-
+// import "./Login.css";
+import "../src/styles/Login.css";
 export default function LoginPage({ setIsLoggedIn }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

@@ -1,9 +1,33 @@
-import React from "react";
+// File: src/Contact.js
+import React, { useState } from "react";
+import axios from 'axios'
+// import React from "react";
 import "./Contact.css"; // Assuming you have corresponding styles
 import { GitHub, LinkedIn, Instagram, Email, Phone, LocationOn, Send } from "@mui/icons-material";
 import { Button, IconButton } from "@mui/material";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post('http://localhost:5000/contact', formData);
+      alert(res.data.message);
+      // Optionally clear form
+      setFormData({ name: '', email: '', message: '' });
+    } catch (err) {
+      console.error(err);
+      alert('Failed to send message.');
+    }
+  };
+
 
   // ✅ Function to open LinkedIn in a new tab
   const openLinkedIn = () => {
@@ -16,18 +40,28 @@ const Contact = () => {
       <div className="contact-wrapper">
 
         {/* Left contact page */}
-        <form id="contact-form" className="form-horizontal" role="form">
+        <form id="contact-form" className="form-horizontal" role="form" onSubmit={handleSubmit}>
           <div className="form-group">
             <div className="col-sm-12">
-              <input type="text" className="form-control" id="name" placeholder="NAME" name="name" required />
+              <input type="text" className="form-control" id="name" placeholder="NAME" name="name" 
+              value={formData.name}
+              onChange={handleChange}
+              required />
             </div>
           </div>
+
           <div className="form-group">
             <div className="col-sm-12">
-              <input type="email" className="form-control" id="email" placeholder="EMAIL" name="email" required />
+              <input type="email" className="form-control" id="email" placeholder="EMAIL" name="email" 
+                value={formData.email}
+                onChange={handleChange}
+              required />
             </div>
           </div>
-          <textarea className="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+          <textarea className="form-control" rows="10" placeholder="MESSAGE" name="message" 
+          value={formData.message}
+          onChange={handleChange}
+          required></textarea>
 
           <Button 
             variant="contained" 
@@ -35,7 +69,6 @@ const Contact = () => {
             type="submit"
             startIcon={<Send />}
             fullWidth
-
             sx={{ mt: 1 }}
           >
             Send

@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.0.2",
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "cra-template": "1.2.0",
+    "localtunnel": "^2.0.2",
     "lucide-react": "^0.475.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -15,6 +19,7 @@
     "web-vitals": "^4.2.4"
   },
   "scripts": {
+    "golive": "lt --port 3000",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -37,5 +42,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/vaishnavidevipatil/login_app.git",
+  "author": "vaishnavidevipatil <vaishnavi@factree.ai>",
+  "license": "MIT"
 }
