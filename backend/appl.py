@@ -3,8 +3,10 @@ import requests
 import pymongo
 from datetime import datetime
 from bson import ObjectId
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 API_KEY = "8d9885982d75651c89f336f3b0ff5d44"
 BASE_URL = "https://api.openweathermap.org/data/2.5"
@@ -33,7 +35,7 @@ def current_weather():
 
     result = db.current_weather.insert_one(data)
     data["_id"] = str(result.inserted_id)  # convert ObjectId → string
-
+    print(",,,,,,,,,,,,,,,,,,,,",data)
     return jsonify(data)  # ✅ Now serializable
 
 @app.route("/forecast", methods=["GET"])

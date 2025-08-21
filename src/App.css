@@ -4,7 +4,7 @@
   overflow: hidden;
   padding: 0;
   box-sizing: border-box;
-  /* background-color: aliceblue; */
+  background-color: aliceblue;
   font-family: "Poppins", sans-serif;
 }
 
@@ -13,20 +13,6 @@
 }
 
 /* === App Container === */
-.app-container {
-  background-color: rgb(250, 250, 250);
-  min-height: 80vh;       /* Fill full screen height */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;  /* Prevent centering everything */
-  color: black;
-  text-align: center;
-  width: 100%;             /* Keep within viewport */
-  max-width: 980px;       /* Optional: limit width */
-  margin: 0 auto;          /* Center content */
-  padding: 20px;
-}
 
 
 /* === Title Styling === */
@@ -42,6 +28,7 @@
 .main-layout {
   display: flex;
   flex-direction: column;
+  background-color: #007bff;
   height: 100vh;
 }
 

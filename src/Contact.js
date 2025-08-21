@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import axios from 'axios'
 // import React from "react";
-import "./Contact.css"; // Assuming you have corresponding styles
+import "../src/styles/Contact.css"; // Assuming you have corresponding styles
 import { GitHub, LinkedIn, Instagram, Email, Phone, LocationOn, Send } from "@mui/icons-material";
 import { Button, IconButton } from "@mui/material";
 

@@ -1,5 +1,5 @@
 /* login.css */
-body {
+/* body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     display: flex;
@@ -8,8 +8,8 @@ body {
     height: 100vh;
     margin: 0;
     background-color:  rgb(131, 241, 245);
-    margin: 0%;
-  }
+   
+  } */
   
   .login-container {
     display: flex;
@@ -17,16 +17,21 @@ body {
     align-items: center;
     width: 100%;
     max-width: 450px;
+    align-items: center;
+    margin: 0%;
+    margin-left: 95px;
   }
   
   .login-box {
     background: white;
-    margin-left: -60px;
+    /* margin-left: -60px; */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 80%;
+    width: 70%;
+    height:100%;
     text-align: center;
+    align-items: center;
   }
   
   h2 {

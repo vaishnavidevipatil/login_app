@@ -18,13 +18,12 @@
 
 #contact {
   width: 50%;
-
   margin-top: 3%;
   padding: 50px 0;
   text-align: center;
   margin-right: 35%;
-  /* margin-: 10%; */
-  background-color: black;
+  margin-left: 30%;
+  background-color: #fff;
 }
 
 .section-header {

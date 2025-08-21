@@ -45,9 +45,10 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import SignUp from "./SignUp";
-import Login from "./Login";
-// import Contact from "./Contact";
+import Login from "./Login/Login";
+import Contact from "./Contact";
 // import Dashboard from "./Dashboard";
+import Dashboard from "./DashboardPage/Dashboard";
 import About from "./About";
 import "./App.css";
 
@@ -69,16 +70,16 @@ function App() {
         <Routes>
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
-          {/* <Route path="/contact" element={<Contact />} /> */}
+          <Route path="/contact" element={<Contact />} />
           
           {/* Protected Routes */}
           <Route
             path="/dashboard"
-            // element={isLoggedIn ? <Dashboard /> : <Navigate to="/login" />}
+            element={isLoggedIn ? <Dashboard /> : <Navigate to="/login" />}
           />
           <Route
             path="/about"
-            // element={isLoggedIn ? <About /> : <Navigate to="/login" />}
+            element={isLoggedIn ? <About /> : <Navigate to="/login" />}
           />
         </Routes>
       </div>
