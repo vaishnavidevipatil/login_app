@@ -14,16 +14,17 @@
   .login-container {
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 100%;
-    max-width: 450px;
+    max-width: 650px;
+    height: 400px;
     align-items: center;
-    margin: 0%;
-    margin-left: 95px;
+    margin-top: 10%;
+    margin-left: 40%;
+    
   }
   
   .login-box {
-    background: white;
+    background: #fff;
     /* margin-left: -60px; */
     padding: 20px;
     border-radius: 8px;
