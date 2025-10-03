@@ -150,6 +150,33 @@ def contact():
         print(f"Error in contact route: {e}")
         return jsonify({"error": "Server error"}), 500
 
+
+@app.route("/reset-password", methods=["POST"])
+def reset_password():
+    data = request.json
+    email = data.get("email")
+    new_password = data.get("new_password")
+
+    if not email or not new_password:
+        return jsonify({"success": False, "message": "Email and new password are required"}), 400
+
+    # Check if email exists in DB
+    user = records.find_one({"email": email})
+    if not user:
+        return jsonify({"success": False, "message": "Email not registered"}), 404
+
+    # Hash the new password
+    hashed_pw = bcrypt.hashpw(new_password.encode("utf-8"), bcrypt.gensalt())
+
+    # Update password in DB
+    records.update_one(
+        {"email": email},
+        {"$set": {"password": hashed_pw}}
+    )
+
+    return jsonify({"success": True, "message": "Password reset successful"}), 200
+
+
 @app.route('/')
 def home():
     return "Welcome to Flask"    

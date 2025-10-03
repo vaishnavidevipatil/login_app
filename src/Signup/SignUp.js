@@ -43,6 +43,7 @@ const SignUp = () => {
             placeholder="Enter your name"
             value={formData.full_name}
             onChange={handleChange}
+            size={60}
             required
           />
         </div>

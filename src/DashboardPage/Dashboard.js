@@ -63,7 +63,7 @@ function Dashboard() {
           border: "1px solid #ccc"
         }}
       >
-        {cities.map((c, index) => (
+      {cities.map((c, index) => (
           <option key={index} value={c.city}>
             {c.city}, {c.state}
           </option>

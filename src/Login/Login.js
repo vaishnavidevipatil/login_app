@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import "./Login.css";
 import "./Login.css";
+import { Link } from "react-router-dom";
+import Forgotpw from "../Reset/Forgotpw";
 export default function LoginPage({ setIsLoggedIn }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,7 +27,8 @@ export default function LoginPage({ setIsLoggedIn }) {
     if (data.success) {
       navigate("/about");
     } else {
-      alert("Login Failed");
+      // alert("Login Failed");
+      console.log("Login failed!")
     }
   };
 
@@ -39,6 +42,7 @@ export default function LoginPage({ setIsLoggedIn }) {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            size={80}
             required
           />
           <input
@@ -51,7 +55,7 @@ export default function LoginPage({ setIsLoggedIn }) {
           <button type="submit">Login</button>
         </form>
           <p>
-            <a href="/forgot-password">Forgot Password?</a>
+            <Link to="/forgotpw">Forgot Password?</Link>
           </p>
         <p>
           Don't have an account? <a href="/signup">Sign Up</a>
