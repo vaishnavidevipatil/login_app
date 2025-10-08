@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import './Signup.css';
-
+import "./Signup.css";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -32,71 +31,77 @@ const SignUp = () => {
 
   return (
     <div className="signup-container">
-      <h2 className="signup-title">Sign Up to Login</h2>
+      <h1 className="signup-title"><b>Sign Up</b></h1>
       <form onSubmit={handleSubmit} className="signup-form">
+        
         <div className="form-group">
-          <label htmlFor="full_name">Full Name</label>
           <input
             type="text"
             id="full_name"
             name="full_name"
-            placeholder="Enter your name"
+            placeholder=" "
             value={formData.full_name}
             onChange={handleChange}
-            size={60}
             required
           />
+          <label htmlFor="full_name">Full Name</label>
         </div>
+
         <div className="form-group">
-          <label htmlFor="date_of_birth">Date of Birth</label>
           <input
             type="date"
             id="date_of_birth"
             name="date_of_birth"
+            placeholder=" "
             value={formData.date_of_birth}
             onChange={handleChange}
             required
           />
+          <label htmlFor="date_of_birth">Date of Birth</label>
         </div>
+
         <div className="form-group">
-          <label htmlFor="phone_number">Phone Number</label>
           <input
             type="tel"
             id="phone_number"
             name="phone_number"
-            placeholder="Enter your phone number"
+            placeholder=" "
             value={formData.phone_number}
             onChange={handleChange}
             required
             pattern="[0-9]{10,15}"
             title="Please enter a valid phone number"
           />
+          <label htmlFor="phone_number">Phone Number</label>
         </div>
+
         <div className="form-group">
-          <label htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
             name="email"
-            placeholder="Enter your email"
+            placeholder=" "
             value={formData.email}
             onChange={handleChange}
             required
           />
+          <label htmlFor="email">Email</label>
         </div>
+
         <div className="form-group">
-          <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
             name="password"
-            placeholder="Create a password"
+            placeholder=" "
             value={formData.password}
             onChange={handleChange}
             required
           />
+          <label htmlFor="password">Password</label>
         </div>
-        <button type="submit" className="signup-btn">
+
+        <button type="submit" className="signup-btn" style={{alignItems:"center"}}>
           Register
         </button>
       </form>
@@ -105,4 +110,3 @@ const SignUp = () => {
 };
 
 export default SignUp;
-

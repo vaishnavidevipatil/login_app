@@ -1,7 +1,7 @@
 /* About Page Styles */
 .about-container {
     /* background: linear-gradient(135deg, #1e3c72, #2a5298); */
-    min-height: 100vh;
+    min-height: 120vh;
     padding: 20px;
     margin-right: 30%;
     display: flex;

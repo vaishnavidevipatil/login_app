@@ -46,13 +46,11 @@ function Dashboard() {
   };
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Poppins" }}>
-      <h2 style={{ marginBottom: "15px" }}>🌤 Weather Dashboard</h2>
-
-      {/* Dropdown for cities */}<i class="fa fa-search"></i>
-      <label style={{ fontWeight: "bold" }}>Select City:  
-        <i class="fa fa-search"></i>
-      </label>
+    <div style={{ padding: "20px", fontFamily: "Poppins",marginTop: "105px", backgroundColor: "#f0f8ff", borderRadius: "10px", boxShadow: "0px 4px 8px rgba(0,0,0,0.1)" }}>
+      <h2 style={{ marginBottom: "45px" }}>🌤 Weather Dashboard</h2>
+      
+      {/* Dropdown for cities */}
+      <label style={{ fontWeight: "bold"}}>Select City:</label>
       <select
         value={city}
         onChange={(e) => setCity(e.target.value)}

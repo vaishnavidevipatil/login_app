@@ -1,0 +1,136 @@
+/* 🌴 Trip.css - Beautiful Vacation Package Form Styling */
+
+body {
+  background: linear-gradient(135deg, #d1f7ff 0%, #fffaf0 100%);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow-y: auto; 
+}
+
+h2 {
+  text-align: center;
+  color: #2b6777;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.container {
+  margin-top: 20px;
+  height: 100%;
+  background-color: #ffffff;
+  /* height: auto; */
+  max-height: 1200px;
+  width: 140%;
+  max-width: 550px;
+  margin-bottom: 20%;
+  margin: 70px auto;
+  padding: 35px 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);  
+  transition: all 0.3s ease-in-out;
+}
+
+/* .container {
+    /* background: linear-gradient(135deg, #1e3c72, #2a5298); 
+    min-height: 120vh;
+    padding: 20px;
+    margin-right: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: Left;
+    color: white;
+    text-align: center;
+    width: 100%;
+  } */
+   
+
+/* .container:hover {
+  transform: scale(1.01);
+} */
+
+label {
+  display: block;
+  font-weight: 600;
+  margin: 10px 0 5px;
+  color: #2b6777;
+}
+
+input[type="number"],
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #a3c1ad;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  background-color: #f9fdfc;
+  transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #2b6777;
+  box-shadow: 0 0 6px rgba(43, 103, 119, 0.3);
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #52b788;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #40916c;
+  transform: translateY(-2px);
+}
+
+.result-box {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 2px solid #a3c1ad;
+  border-radius: 12px;
+}
+
+.result-box h3 {
+  color: #1b4332;
+  margin-bottom: 10px;
+}
+
+.result-box p {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.result-box ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 5px;
+}
+
+.result-box li {
+  background: #e9f5ec;
+  margin: 5px 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #1b4332;
+}
+
+.result-box li:nth-child(odd) {
+  background: #d1e7dd;
+}

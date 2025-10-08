@@ -48,8 +48,8 @@
 // };
 
 // export default About;
-
 import React, { useState } from "react";
+import "./Trip.css";
 
 function TripValidator() {
   const [form, setForm] = useState({
@@ -59,7 +59,7 @@ function TripValidator() {
     nights: 4,
     members: 1,
     family_preference: false,
-    package_family_friendly: false
+    package_family_friendly: false,
   });
 
   const [result, setResult] = useState(null);
@@ -73,7 +73,7 @@ function TripValidator() {
   };
 
   const handleSubmit = async () => {
-    const res = await fetch("http://localhost:5000/check-package", {
+    const res = await fetch("http://localhost:5003/check-package", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
@@ -83,59 +83,47 @@ function TripValidator() {
   };
 
   return (
-    <div style={{ maxWidth: "600px", margin: "auto", marginTop:"70px" }}>
+    <div className="container">
       <h2>🏖️ Plan My Trip - Vacation Package Validator</h2>
 
-      <label>Choose Destination: </label>
+      <label>Choose Destination:</label>
       <select name="destination" value={form.destination} onChange={handleChange}>
         <option>Coorg (Madikeri)</option>
-        <option>Chikmagalur</option>
         <option>Hampi</option>
-        <option>Mysuru (Mysore)</option>
         <option>Gokarna</option>
         <option>Udupi</option>
-        <option>Kabini (Nagarhole National Park)</option>
         <option>Bandipur National Park</option>
         <option>Dandeli</option>
-        <option>Badami, Aihole & Pattadakal</option>
         <option>Jog Falls</option>
         <option>Sakleshpur</option>
       </select>
-      <br />
 
-      <label>Price (₹): </label>
+      <label>Price (₹):</label>
       <input type="number" name="price" value={form.price} onChange={handleChange} />
-      <br />
 
-      <label>Days: </label>
+      <label>Days:</label>
       <input type="number" name="days" value={form.days} onChange={handleChange} />
-      <br />
 
-      <label>Nights: </label>
+      <label>Nights:</label>
       <input type="number" name="nights" value={form.nights} onChange={handleChange} />
-      <br />
 
-      <label>Members: </label>
+      <label>Members:</label>
       <input type="number" name="members" value={form.members} onChange={handleChange} />
-      <br />
 
-      <div>
-          <label>Family Preference?</label><input type="checkbox" name="family_preference" checked={form.family_preference} onChange={handleChange} />
-      </div>
-      <br />
+      <label>Family Preference (Yes/No):</label>
+      <input type="text" name="family_preference" value={form.family_preference} onChange={handleChange} />
 
-      <label>
-        Package Family Friendly?
-        <input type="checkbox" name="package_family_friendly" checked={form.package_family_friendly} onChange={handleChange} />
-      </label>
-      <br />
+      <label>Package Family Friendly (Yes/No):</label>
+      <input type="text" name="package_family_friendly" value={form.package_family_friendly} onChange={handleChange} />
 
       <button onClick={handleSubmit}>Check Package</button>
 
       {result && (
-        <div style={{ marginTop: "20px", padding: "10px", border: "1px solid gray" }}>
+        <div className="result-box">
           <h3>Result:</h3>
-          <p style={{ color: result.status === "success" ? "green" : "red" }}>{result.message}</p>
+          <p style={{ color: result.status === "success" ? "green" : "red" }}>
+            {result.message}
+          </p>
           {result.details && (
             <ul>
               <li>Destination: {result.details.destination}</li>
