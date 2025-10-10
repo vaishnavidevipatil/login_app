@@ -1,41 +1,20 @@
-# # Dockerfile - this is a comment. Delete me if you want.
-# FROM python:3.7-alpine
-
-# ADD . /app
-
-# WORKDIR /app
-
-# RUN apk --update --upgrade add --no-cache  gcc musl-dev jpeg-dev zlib-dev libffi-dev cairo-dev pango-dev gdk-pixbuf-dev
-# RUN echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/main" > /etc/apk/repositories
-# RUN apk update && apk add --no-cache gcc musl-dev jpeg-dev zlib-dev libffi-dev cairo-dev pango-dev gdk-pixbuf-dev
-
-
-# COPY requirements.txt requirements.txt
-
-# RUN pip install -r requirements.txt
-# EXPOSE 5000
-
-# COPY . .
-# CMD [ "python", "app.py" ]
-
-
-# Use a lightweight Python image
-FROM python:3.7-alpine
+# Use Node.js base image
+FROM node:20
 
 # Set working directory
 WORKDIR /app
 
-# Copy application files
-ADD . /app
+# Copy package files first (better caching)
+COPY package.json package-lock.json* ./
 
 # Install dependencies
-RUN apk add --no-cache gcc musl-dev jpeg-dev zlib-dev libffi-dev cairo-dev pango-dev gdk-pixbuf-dev
-RUN pip install --upgrade pip
-COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN npm install --legacy-peer-deps
 
-# Expose Flask port
-EXPOSE 5000
+# Copy all other frontend files
+COPY . .
 
-# Run the Flask app
-CMD ["python", "app.py"]
+# Expose React dev port
+EXPOSE 3000
+
+# Start React dev server
+CMD ["npm", "start"]
